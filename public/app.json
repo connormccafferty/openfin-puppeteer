@@ -1,15 +1,15 @@
 {
     "startup_app": {
-        "name": "OpenfinPOC",
+        "name": "testing-app",
         "url": "http://localhost:5555/index.html",
-        "uuid": "OpenfinPOC",
+        "uuid": "testing-app",
         "applicationIcon": "http://localhost:5555/favicon.ico",
-        "autoShow": true,
+        "autoShow": false,
         "saveWindowState": true
     },
     "runtime": {
-        "arguments": "",
-        "version": "stable"
+        "arguments": "--remote-debugging-port=9222",
+        "version": "13.76.44.21"
     },
     "shortcut": {
         "company": "OpenFin",

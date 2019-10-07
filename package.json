@@ -1,10 +1,17 @@
 {
-  "name": "openfin-template",
-  "version": "0.0.0",
-  "devDependencies": {
-    "@types/openfin": "latest",
-    "hadouken-js-adapter": "latest",
-    "live-server": "latest"
-  },
-  "license": "Apache-2.0"
+    "name": "openfin-template",
+    "version": "0.0.0",
+    "scripts": {
+        "test": "mocha test/bootstrap.js --recursive test"
+    },
+    "devDependencies": {
+        "@types/openfin": "latest",
+        "chai": "^4.2.0",
+        "hadouken-js-adapter": "latest",
+        "live-server": "latest",
+        "mocha": "^6.2.1",
+        "node-fetch": "^2.6.0",
+        "puppeteer-core": "^1.20.0"
+    },
+    "license": "Apache-2.0"
 }
