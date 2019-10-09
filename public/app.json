@@ -4,7 +4,7 @@
         "url": "http://localhost:5555/index.html",
         "uuid": "testing-app",
         "applicationIcon": "http://localhost:5555/favicon.ico",
-        "autoShow": false,
+        "autoShow": true,
         "saveWindowState": true
     },
     "runtime": {
@@ -12,9 +12,9 @@
         "version": "13.76.44.21"
     },
     "shortcut": {
-        "company": "OpenFin",
-        "description": "Openfin POC",
+        "company": "testing-app",
+        "description": "testing-app",
         "icon": "http://localhost:5555/favicon.ico",
-        "name": "Openfin POC"
+        "name": "testing-app"
     }
 }

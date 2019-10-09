@@ -10,6 +10,7 @@ before(function(done) {
     // expose global variables
     global.assert = assert;
     global.expect = expect;
+    global.getWindowByTitle = getWindowByTitle;
 
     // connect to openfin app via remote debugging websocket
     fetch(`http://127.0.0.1:9222/json/version`)
@@ -26,19 +27,6 @@ before(function(done) {
         .catch(err => console.log(err));
 });
 
-// describe("Main Window Identity", () => {
-//     it("should match the uuid in the app config", async () => {
-//         let pages = await browser.pages();
-//         let identity = await getOpenfinId(pages[0]);
-//         assert.equal(identity.uuid, "hello");
-//     });
-// });
-
-// async function getOpenfinId(page) {
-//     return await page.evaluate(() => fin.Window.getCurrentSync().identity);
-// }
-
-// close browser and reset global variables
 after(() => {
     browser.close();
 
@@ -46,3 +34,14 @@ after(() => {
     global.assert = globalVariables.assert;
     global.expect = globalVariables.expect;
 });
+
+async function getWindowByTitle(title) {
+    let pages = await browser.pages();
+
+    for (let i = 0; i < pages.length; i++) {
+        let pageTitle = await pages[i].title();
+        if (pageTitle === title) return pages[i];
+    }
+
+    return null;
+}
