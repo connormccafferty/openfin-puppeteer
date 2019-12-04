@@ -4,7 +4,6 @@ const puppeteer = require("puppeteer-core");
 const fetch = require("node-fetch");
 const _ = require("lodash");
 const globalVariables = _.pick(global, ["browser", "assert", "expect"]);
-let wsChromeEndpointUrl;
 
 before(function(done) {
     // expose global variables
@@ -15,16 +14,13 @@ before(function(done) {
     // connect to openfin app via remote debugging websocket
     fetch(`http://127.0.0.1:9222/json/version`)
         .then(async response => {
-            let data = await response.json();
-            wsChromeEndpointUrl = data.webSocketDebuggerUrl;
-        })
-        .then(async () => {
+            let { webSocketDebuggerUrl } = await response.json();
             global.browser = await puppeteer.connect({
-                browserWSEndpoint: wsChromeEndpointUrl
+                browserWSEndpoint: webSocketDebuggerUrl
             });
             done();
         })
-        .catch(err => console.log(err));
+        .catch(console.error);
 });
 
 after(() => {

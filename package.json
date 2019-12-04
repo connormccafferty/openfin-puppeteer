@@ -2,7 +2,9 @@
     "name": "openfin-template",
     "version": "0.0.0",
     "scripts": {
-        "test": "mocha test/bootstrap.js --recursive test"
+        "start": "node server",
+        "test": "mocha test/bootstrap.js --recursive test",
+        "start:test": "start-server-and-test start http://localhost:5555 test"
     },
     "devDependencies": {
         "@types/openfin": "latest",
@@ -11,7 +13,8 @@
         "live-server": "latest",
         "mocha": "^6.2.1",
         "node-fetch": "^2.6.0",
-        "puppeteer-core": "^1.20.0"
+        "puppeteer-core": "^1.20.0",
+        "start-server-and-test": "^1.10.6"
     },
     "license": "Apache-2.0"
 }
