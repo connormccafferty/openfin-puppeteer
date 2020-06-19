@@ -9,7 +9,7 @@
     },
     "runtime": {
         "arguments": "--remote-debugging-port=9222",
-        "version": "13.76.44.21"
+        "version": "16.83.50.9"
     },
     "shortcut": {
         "company": "testing-app",
