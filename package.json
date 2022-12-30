@@ -11,7 +11,7 @@
         "chai": "^4.2.0",
         "hadouken-js-adapter": "latest",
         "live-server": "latest",
-        "mocha": "^6.2.1",
+        "mocha": "^10.2.0",
         "node-fetch": "^2.6.0",
         "puppeteer-core": "^1.20.0",
         "start-server-and-test": "^1.10.6"
